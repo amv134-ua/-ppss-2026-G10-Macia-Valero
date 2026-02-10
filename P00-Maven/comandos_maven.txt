@@ -1,0 +1,12 @@
+mvn compile->
+- Compila el código fuente
+- Genera el directorio target
+
+mvn clean->
+- Elimina el directorio target
+
+mvn test->
+- Compila código
+- Compila tests
+- Ejecuta los tests
+- Genera informes en target/surefire-reports

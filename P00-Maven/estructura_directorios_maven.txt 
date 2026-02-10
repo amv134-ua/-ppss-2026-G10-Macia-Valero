@@ -1,0 +1,30 @@
+.
+├── pom.xml <- fichero situado en el directorio raíz del proyecto, este fichero sirve para describir el proyecto y definir como construirse además de definir dependencias y plugins.
+└── src <-directorio fuente con todos los ficheros para construir el proyecto
+    ├── main <- codigo fuente de la aplicación 
+    │   ├── java <- codigo fuente java de la aplicacion
+    │   │   └── paquete1 <- paquete con las clases del proyecto
+    │   │       ├── Matricula.java
+    │   │       └── Triangulo.java
+    │   └── resources <- fichero adicional usados por el codigo fuente
+    └── test <- codigo de las pruebas del proyecto
+        └── java <- codigo fuente java de las pruebas del proyecto
+            └── paquete1 <- paquete con las clases de prueba
+                ├── MatriculaTest.java
+                └── TrianguloTest.java
+
+.
+├── pom.xml
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── paquete2
+    │   │       ├── Matricula.java
+    │   │       └── Triangulo.java
+    │   └── resources
+    └── test
+        └── java
+            └── paquete2
+                ├── MatriculaTest.java
+                └── TrianguloTest.java
+
