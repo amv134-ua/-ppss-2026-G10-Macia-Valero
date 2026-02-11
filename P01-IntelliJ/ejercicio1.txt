@@ -1,0 +1,29 @@
+cuestiones package e install:
+a)qué goals se ejecutan en cada caso?
+en package:
+- resources:3.3.1:resources
+- compiler:3.13.0:compile
+- resources:3.3.1:testResources
+- compiler:3.13.0:testCompile
+- surefire:3.5.2:test
+- jar:3.4.1:jar
+en install:
+- resources:3.3.1:resources
+- compiler:3.13.0:compile
+- resources:3.3.1:testResources
+- compiler:3.13.0:testCompile
+- surefire:3.5.2:test
+- jar:3.4.1:jar
+- install:3.1.2:install
+
+b) qué hace, qué artefacto genera y dónde se genera durante la fase package?
+-compila el codigo fuente, ejecuta las pruebas y empaqueta el resultado en un artefacto jar generado en la ruta .../SimpleMavenProject/target/SimpleMavenProject-1.0-SNAPSHOT.jar
+
+c)qué hace exactamente la fase install y dónde se copia exactamente en tu disco duro el artefacto
+correspondiente .
+-además de lo mismo que package, el artefacto resultante se installa en el repositorio local de Maven, en el disco duro se ubican tanto el SimpleMavenProject-1.0-SNAPSHOT.pom y SimpleMavenProject-1.0-SNAPSHOT.jar se encuentran en :/home/ppss/.m2/repository/ppss/P01/SimpleMavenProject/1.0-SNAPSHOT
+
+
+d)¿Para qué nos puede servir que el empaquetado de nuestro proyecto esté almacenado en nuestro
+repositorio local Maven?	
+puede servir para que el proyecto esté disponible para ser usado como dependencia por otros proyectos en la misma máquina poniendo el correspondiente groupId,artefactId,version en el pom.xml
