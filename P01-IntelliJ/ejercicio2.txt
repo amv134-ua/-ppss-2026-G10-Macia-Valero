@@ -1,0 +1,15 @@
+EJERCICIO 2:
+
+- Comportamientos que pertenecen al conjunto S:
+	(1) <(29, 2, 2020)->true>
+	(2) <(31, 8, 2019)->true>
+	(3) <(31, 4, 2019)->false>
+
+- Comportamientos que pertenecen al conjunto P:	
+    (1) <(31, 8, 2019)->false>
+	(2) <(29, 2, 2024)->true>
+
+- Comportamientos que pertenecen a T
+   (1) <(29, 2, 2020)->true>
+   (2) <(31, 8, 2019)->true>
+   (3) <(-2, 5, 2019)->false>
