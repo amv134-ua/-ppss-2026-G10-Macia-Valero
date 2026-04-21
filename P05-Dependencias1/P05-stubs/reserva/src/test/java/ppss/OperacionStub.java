@@ -1,24 +1,32 @@
 package ppss;
+
 import ppss.excepciones.*;
+import java.util.ArrayList;
 
 public class OperacionStub implements IOperacionBO {
-    private boolean forzarFalloConexion = false;
 
-    public void setForzarFalloConexion(boolean forzar) {
-        this.forzarFalloConexion = forzar;
-    }
+    // ¡La magia de las listas dinámicas! Creamos una lista negra para cada fallo posible.
+    public ArrayList<String> isbnsInvalidos = new ArrayList<>();
+    public ArrayList<String> sociosInvalidos = new ArrayList<>();
+    public ArrayList<String> isbnsConFalloJDBC = new ArrayList<>();
 
     @Override
     public void operacionReserva(String socio, String isbn) throws IsbnInvalidoException, JDBCException, SocioInvalidoException {
-        if ("Pepe".equals(socio)) {
+        // 1. Si el socio está en la lista de morosos/inválidos -> ¡Bum!
+        if (sociosInvalidos.contains(socio)) {
             throw new SocioInvalidoException();
         }
-        if (!"11111".equals(isbn) && !"22222".equals(isbn)) {
+
+        // 2. Si el ISBN es inventado -> ¡Bum!
+        if (isbnsInvalidos.contains(isbn)) {
             throw new IsbnInvalidoException();
         }
-        // simulamos que falla la base de datos al meter el segundo libro (C5)
-        if (forzarFalloConexion && "22222".equals(isbn)) {
+
+        // 3. Si el servidor de BD falla justo con este ISBN -> ¡Bum!
+        if (isbnsConFalloJDBC.contains(isbn)) {
             throw new JDBCException();
         }
+
+        // Si el socio y el ISBN no están en ninguna lista, la reserva se hace con éxito.
     }
 }

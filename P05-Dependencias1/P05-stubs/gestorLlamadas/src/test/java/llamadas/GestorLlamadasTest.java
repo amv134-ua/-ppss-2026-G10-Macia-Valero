@@ -27,6 +27,18 @@ public class GestorLlamadasTest {
         assertEquals(resultadoEsperado, resultadoReal, 0.001); // Se añade delta para floats/doubles
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
     @Test
     void GestorC2() {
         // Arrange

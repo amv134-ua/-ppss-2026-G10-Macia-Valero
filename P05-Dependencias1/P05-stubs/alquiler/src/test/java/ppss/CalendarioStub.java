@@ -6,7 +6,7 @@ import java.util.List;
 public class CalendarioStub extends Calendario {
     private List<LocalDate> festivos = new ArrayList<>();
     private List<LocalDate> errores = new ArrayList<>();
-
+    // se puede así o con contructor
     public void addFestivo(LocalDate fecha) { festivos.add(fecha); }
     public void addError(LocalDate fecha) { errores.add(fecha); }
 
